@@ -17,8 +17,17 @@ def display(image, decoded):
         else:
             convex_hull = points;
 
+        n = len(convex_hull)
+        
+        for j in range(0, n):
+            cv2.line(image, convex_hull[j], convex_hull[(j+1)%n], (255,0,0), 3)
+        
+        cv2.imshow("result", image)
+        cv2.waitKey(0)
+        
 
 
 if __name__ =='__main__':
     image = cv2.imread('QR.jpg')
     decoded = decode(image)
+    display(image, decoded)
