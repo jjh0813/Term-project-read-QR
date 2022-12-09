@@ -15,7 +15,15 @@ def display(image, decoded):
             convex_hull = cv2.convexHull(np.array([point for point in points], dtype=np.float32))
             convex_hull = list(map(tuple, np.squeeze(convex_hull)))
         else:
-            convex_hull = points;
+            convex_hull = points
+            
+        n = len(convex_hull)
+
+        for j in range(0, n):
+            cv2.line(image, convex_hull[j], convex_hull[(j + 1) % n], (255, 0, 0), 3)
+
+    cv2.imshow("Result", image)
+    cv2.waitkey(0)
 
 
 
