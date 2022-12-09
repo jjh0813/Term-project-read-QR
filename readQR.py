@@ -26,7 +26,7 @@ def display(image, decoded):
         cv2.waitKey(0)
         
 
-
+# main
 if __name__ =='__main__':
     image = cv2.imread('QR.jpg')
     decoded = decode(image)
