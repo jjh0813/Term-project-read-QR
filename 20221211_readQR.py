@@ -30,3 +30,4 @@ def display(image, decoded):
 if __name__ =='__main__':
     image = cv2.imread('QR.jpg')
     decoded = decode(image)
+    display(image, decoded)
