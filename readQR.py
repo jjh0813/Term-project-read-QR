@@ -1,6 +1,7 @@
 import cv2
 import pyzbar.pyzbar as pyzbar
 import numpy as np
+import webbrowser
 
 def decode(image):
     for object in pyzbar.decode(image):
@@ -30,4 +31,7 @@ def display(image, decoded):
 if __name__ =='__main__':
     image = cv2.imread('QR.jpg')
     decoded = decode(image)
+    qrDecoder = cv2.QRCodeDetector()
+    data = qrDecoder.detectAndDecode(image)[0]
+    webbrowser.open(data)
     display(image, decoded)
