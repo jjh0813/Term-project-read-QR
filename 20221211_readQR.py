@@ -22,7 +22,7 @@ def display(image, decoded):
             cv2.line(image, convex_hull[j], convex_hull[(j + 1) % n], (255, 0, 0), 3)
 
     cv2.imshow("Result", image)
-    cv2.waitkey(0)
+    cv2.waitKey(0)
 
 
 
