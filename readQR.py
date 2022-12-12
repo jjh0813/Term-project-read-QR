@@ -4,6 +4,8 @@ import numpy as np
 import webbrowser
 
 def decode(image):
+    for object in pyzbar.decode(image):
+        print("DATA : ",object.data,'\n')
     return pyzbar.decode(image)
 
 def display(image, decoded):
