@@ -31,6 +31,7 @@ def display(image, decoded):
 if __name__ =='__main__':
     image = cv2.imread('QR.jpg')
     decoded = decode(image)
+    #open website
     qrDecoder = cv2.QRCodeDetector()
     data = qrDecoder.detectAndDecode(image)[0]
     webbrowser.open(data)
